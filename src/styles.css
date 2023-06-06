@@ -78,7 +78,7 @@ nav {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #ffa486;
+  background-color: rgba(204, 170, 204, 0.6666666667);
   gap: 50px;
 }
 nav a {
