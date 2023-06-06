@@ -31,20 +31,6 @@ for (let i = 0; i < enlacesNavegacion.length; i++) {
 
 window.addEventListener("popstate", function (event) {
   if (event.state && event.state.seccionId) {
-    cambiarSeccion(event.state.seccionId);
-  }
-});
-
-if ("scrollRestoration" in history) {
-  history.scrollRestoration = "manual";
-}
-
-window.addEventListener("beforeunload", function () {
-  window.scrollTo({ top: 0 });
-});
-
-window.addEventListener("popstate", function (event) {
-  if (event.state && event.state.seccionId) {
     var seccionActual = document.getElementById(event.state.seccionId);
     if (seccionActual) {
       if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
@@ -54,6 +40,14 @@ window.addEventListener("popstate", function (event) {
       }
     }
   } else {
-    window.history.back();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
+});
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("beforeunload", function () {
+  window.scrollTo({ top: 0 });
 });
