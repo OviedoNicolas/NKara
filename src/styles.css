@@ -148,6 +148,7 @@ nav.active {
   width: 340px;
   gap: 10px;
   margin: 20px;
+  margin-right: -65px;
 }
 .brand__container h1 {
   font-size: 50px;
@@ -197,6 +198,7 @@ nav.active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 .discografía__container div p {
   font-size: clamp(25px, 3vw, 35px);
