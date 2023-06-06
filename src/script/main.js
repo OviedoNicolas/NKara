@@ -36,3 +36,14 @@ window.addEventListener('popstate', function(event) {
         cambiarSeccion(event.state.seccionId);
     }
 });
+
+window.addEventListener('popstate', function(event) {
+    if (event.state && event.state.seccionId) {
+        let seccionActual = document.getElementById(event.state.seccionId);
+        if (seccionActual && window.pageYOffset > 0) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+        window.history.back();
+        }
+    }
+});
