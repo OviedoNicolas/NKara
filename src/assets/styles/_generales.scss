@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $color_oscuro;
+}
+
+body{
+    background-color: $color_oscuro;
+}
+
+img{
+    width: 100%;
+}
+
+h1,h2,h3,h4{
+    font-family: $fuente_principal;
+}
+
+p,a{
+    font-family: $fuente_secundaria;
+    color: $color_claro;
+}
+
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+

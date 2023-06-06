@@ -1,0 +1,118 @@
+header{
+    background-color: $color_claro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__list{
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 996px) {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+nav{
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    transform: translateY(-100%);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: $color_secundario;
+    gap: 50px;
+
+    a{
+        font-size: 50px;
+        font-family: $fuente_principal;
+        color: $color_oscuro;
+
+        @media only screen and (min-width: 996px) {
+            font-size: 30px;
+        }
+    }
+
+    @media only screen and (min-width: 996px) {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        opacity: 1;
+        visibility: visible;
+        color: $color_oscuro;
+        transform: translateY(0%);
+        background-color: transparent;
+        transition: 0s;
+        justify-content: flex-end;
+    }
+}
+
+nav.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+}
+
+.btn__menu--abrir{
+    cursor: pointer;
+    background-color: $color_oscuro;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 20px;
+
+    @media only screen and (min-width: 996px) {
+        display: none;
+    }
+}
+
+.btn__menu--cerrar{
+    cursor: pointer;
+    background-color: $color_principal;
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    border-radius: 50%;
+    margin-top: 50px;
+
+    @media only screen and (min-width: 996px) {
+        display: none;
+    }
+}
+
+.nav__container{
+    display: flex;
+    width: 100%;
+    max-width: 1240px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand__container{
+    display: flex;
+    align-items: center;
+    width:340px;
+    gap: 10px;
+    margin: 20px;
+
+    h1{
+        font-size: 50px;
+    }
+}
+
+.logo__container{
+    width: 60px;
+}
+
+

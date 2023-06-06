@@ -1,0 +1,17 @@
+.hero__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    p{
+        position: absolute;
+        top: 30%;
+        left: 15%;
+        font-size: clamp(12px, 3vw, 60px)
+    }
+}
+
+.hero__img{
+    filter: opacity(0.5);
+}

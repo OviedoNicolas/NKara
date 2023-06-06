@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <link rel="icon" href="./src/assets/images/logo_simple.png">
+    <title>Nico Kara</title>
+</head>
+<body>
+    <header>
+        <div class="nav__container">
+            <div class="brand__container">
+                <div class="logo__container">
+                    <img src="./src/assets/images/logo_simple.png" alt="Logo del artista">
+                </div>
+                <h1>Nico Kara</h1>
+            </div>
+            <div class="btn__menu--abrir" onclick="btn_menuAbrir()" id="btnMenuAbrir">
+                <img src="./src/assets/images/list.svg" alt="icono menu">
+            </div>
+            <nav id="navbar">
+                <div class="btn__menu--cerrar" onclick="btn_menuCerrar()" id="btnMenuCerrar">
+                    <img src="./src/assets/images/x.svg" alt="icono menu">
+                </div>
+                <ul class="navbar__list">
+                    <li>
+                        <a href="#discografia" onclick="btn_menuCerrar()">Discografía</a>
+                    </li>
+                    <li>
+                        <a href="" onclick="btn_menuCerrar()">Videos</a>
+                    </li>
+                    <li>
+                        <a href="#biografia" onclick="btn_menuCerrar()">Biografía</a>
+                    </li>
+                    <li>
+                        <a href="" onclick="btn_menuCerrar()">Notas</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero__container">
+            <div class="hero__img">
+                <img src="./src/assets/images/hero.jpg" alt="">
+            </div>
+            <p>"Lorem ipsum dolor <br> sit amet consectetur"</p>
+        </section>
+        <section class="discografía__container" id="discografia" style="background-image: url(./src/assets/images/wave-haikei.svg);">
+            <div>
+                <p>Escuchá mi ultimo sencillo:</p>
+                <iframe src="https://open.spotify.com/embed?uri=spotify:album:2dP58iyrPbvWGumUI1YQdI" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div>
+                <p>Disfrutá mi disco:</p>
+                <iframe src="https://open.spotify.com/embed?uri=spotify:album:7DbhNG5L25vPwah5P5DBeE" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div>
+                <p>Conocé mis inicios:</p>
+                <iframe src="https://open.spotify.com/embed?uri=spotify:album:3umIH5I48k3NN34RhhPv19" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+        </section>
+        <section>
+
+        </section>
+        <section class="redes__container">
+            <div class="redes__banner">
+                <p>Seguime en:</p>
+                <div class="redes__img">
+                    <img src="./src/assets/images/spotify.svg" alt="">
+                    <img src="./src/assets/images/youtube.svg" alt="">
+                    <img src="./src/assets/images/instagram.svg" alt="">
+                    <img src="./src/assets/images/facebook.svg" alt="">
+                    <img src="./src/assets/images/twitter.svg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="biografia__container" id="biografia">
+            <div>
+                <img src="" alt="">
+            </div>
+            <div id="biografia__container">
+                <h2>Biografía</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quis alias harum molestiae odit maiores, corrupti minus officia facere expedita explicabo eos, repellendus qui debitis. Recusandae expedita velit ea harum?</p>
+            </div>
+        </section>
+        <section>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./src/script/main.js"></script>
+</body>
+</html>
