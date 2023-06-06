@@ -38,6 +38,7 @@ html {
 }
 
 .unselectable {
+  -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -78,7 +79,7 @@ nav {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: rgba(204, 170, 204, 0.6666666667);
+  background-color: #000030;
   gap: 50px;
 }
 nav a {

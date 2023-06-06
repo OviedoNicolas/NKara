@@ -98,11 +98,14 @@ window.addEventListener("beforeunload", function () {
 
 // Función para manejar el evento de clic en el botón de atrás del navegador
 window.addEventListener("popstate", function (event) {
-  if (event.state && event.state.seccionId) {
-    var seccionActual = document.getElementById(event.state.seccionId);
-    if (seccionActual && window.pageYOffset > 0) {
-      // Si no está en la parte superior de la página, desplázate hacia arriba
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (event.state && event.state.seccionId) {
+      var seccionActual = document.getElementById(event.state.seccionId);
+      if (seccionActual && window.pageYOffset > 0) {
+        // Si no está en la parte superior de la página, desplázate hacia arriba
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        // Si está en la parte superior de la página, vuelve atrás en el historial
+        window.history.back();
+      }
     }
-  }
-});
+  });
