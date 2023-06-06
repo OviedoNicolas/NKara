@@ -150,13 +150,14 @@ const btn_menuCerrar = () => {
   
 
 // Variable para almacenar la sección actual
-let seccionActual = null;
+// 
+
+let seccionActual = null; // Variable para almacenar la sección actual
 
 function cambiarSeccion(seccionId) {
   let seccion = document.getElementById(seccionId);
   if (seccion) {
     seccion.scrollIntoView({ behavior: "smooth" });
-    history.pushState({ seccionId: seccionId }, "", "#" + seccionId);
     seccionActual = seccionId; // Actualizar la sección actual
   }
 }
@@ -165,6 +166,7 @@ function handleClick(event) {
   event.preventDefault();
   let seccionId = event.target.getAttribute("href").substring(1);
   cambiarSeccion(seccionId);
+  history.pushState({ seccionId: seccionId }, "", "#" + seccionId);
 }
 
 let enlacesNavegacion = document.querySelectorAll('a[href^="#"]');
@@ -172,15 +174,10 @@ for (let i = 0; i < enlacesNavegacion.length; i++) {
   enlacesNavegacion[i].addEventListener("click", handleClick);
 }
 
-window.addEventListener("popstate", function (event) {
-  if (event.state && event.state.seccionId) {
-    cambiarSeccion(event.state.seccionId);
-  } else {
-    if (seccionActual) {
-      cambiarSeccion(seccionActual); // Volver a la sección actual si no hay un estado definido
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" }); // Si no hay sección actual, desplázate hacia arriba
-    }
+window.addEventListener("hashchange", function (event) {
+  let seccionId = location.hash.substring(1);
+  if (seccionId !== seccionActual) {
+    cambiarSeccion(seccionId);
   }
 });
 
