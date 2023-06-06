@@ -48,6 +48,7 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-window.addEventListener("beforeunload", function () {
-  window.scrollTo({ top: 0 });
+window.addEventListener("beforeunload", function (event) {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
