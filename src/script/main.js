@@ -46,8 +46,14 @@ window.addEventListener("beforeunload", function () {
 window.addEventListener("popstate", function (event) {
   if (event.state && event.state.seccionId) {
     var seccionActual = document.getElementById(event.state.seccionId);
-    if (seccionActual && window.pageYOffset > 0) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (seccionActual) {
+      if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        cambiarSeccion(event.state.seccionId);
+      }
     }
+  } else {
+    window.history.back();
   }
 });
