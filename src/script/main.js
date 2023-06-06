@@ -110,41 +110,87 @@ const btn_menuCerrar = () => {
 //     }
 //   });
 
+// function cambiarSeccion(seccionId) {
+//     let seccion = document.getElementById(seccionId);
+//     if (seccion) {
+//       seccion.scrollIntoView({ behavior: "smooth" });
+//       history.pushState({ seccionId: seccionId }, "", "#" + seccionId); // Utiliza pushState en lugar de replaceState
+//     }
+//   }
+  
+//   function handleClick(event) {
+//     event.preventDefault();
+//     let seccionId = event.target.getAttribute("href").substring(1);
+//     cambiarSeccion(seccionId);
+//   }
+  
+//   let enlacesNavegacion = document.querySelectorAll('a[href^="#"]');
+//   for (let i = 0; i < enlacesNavegacion.length; i++) {
+//     enlacesNavegacion[i].addEventListener("click", handleClick);
+//   }
+  
+//   window.addEventListener("popstate", function (event) {
+//     if (event.state && event.state.seccionId) {
+//       cambiarSeccion(event.state.seccionId);
+//     } else {
+//       window.scrollTo({ top: 0, behavior: "smooth" }); // Si no hay un estado, desplázate hacia arriba
+//     }
+//   });
+  
+//   // Deshabilitar la restauración automática de desplazamiento
+//   if ("scrollRestoration" in history) {
+//     history.scrollRestoration = "manual";
+//   }
+  
+//   // Función para manejar el evento de antes de descargar la página
+//   window.addEventListener("beforeunload", function () {
+//     // Volver a la parte superior de la página al salir
+//     window.scrollTo({ top: 0 });
+//   });
+  
+
+// Variable para almacenar la sección actual
+let seccionActual = null;
+
 function cambiarSeccion(seccionId) {
-    let seccion = document.getElementById(seccionId);
-    if (seccion) {
-      seccion.scrollIntoView({ behavior: "smooth" });
-      history.pushState({ seccionId: seccionId }, "", "#" + seccionId); // Utiliza pushState en lugar de replaceState
-    }
+  let seccion = document.getElementById(seccionId);
+  if (seccion) {
+    seccion.scrollIntoView({ behavior: "smooth" });
+    history.pushState({ seccionId: seccionId }, "", "#" + seccionId);
+    seccionActual = seccionId; // Actualizar la sección actual
   }
-  
-  function handleClick(event) {
-    event.preventDefault();
-    let seccionId = event.target.getAttribute("href").substring(1);
-    cambiarSeccion(seccionId);
-  }
-  
-  let enlacesNavegacion = document.querySelectorAll('a[href^="#"]');
-  for (let i = 0; i < enlacesNavegacion.length; i++) {
-    enlacesNavegacion[i].addEventListener("click", handleClick);
-  }
-  
-  window.addEventListener("popstate", function (event) {
-    if (event.state && event.state.seccionId) {
-      cambiarSeccion(event.state.seccionId);
+}
+
+function handleClick(event) {
+  event.preventDefault();
+  let seccionId = event.target.getAttribute("href").substring(1);
+  cambiarSeccion(seccionId);
+}
+
+let enlacesNavegacion = document.querySelectorAll('a[href^="#"]');
+for (let i = 0; i < enlacesNavegacion.length; i++) {
+  enlacesNavegacion[i].addEventListener("click", handleClick);
+}
+
+window.addEventListener("popstate", function (event) {
+  if (event.state && event.state.seccionId) {
+    cambiarSeccion(event.state.seccionId);
+  } else {
+    if (seccionActual) {
+      cambiarSeccion(seccionActual); // Volver a la sección actual si no hay un estado definido
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" }); // Si no hay un estado, desplázate hacia arriba
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Si no hay sección actual, desplázate hacia arriba
     }
-  });
-  
-  // Deshabilitar la restauración automática de desplazamiento
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
   }
-  
-  // Función para manejar el evento de antes de descargar la página
-  window.addEventListener("beforeunload", function () {
-    // Volver a la parte superior de la página al salir
-    window.scrollTo({ top: 0 });
-  });
-  
+});
+
+// Deshabilitar la restauración automática de desplazamiento
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+// Función para manejar el evento de antes de descargar la página
+window.addEventListener("beforeunload", function () {
+  // Volver a la parte superior de la página al salir
+  window.scrollTo({ top: 0 });
+});
