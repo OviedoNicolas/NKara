@@ -28,6 +28,30 @@ let enlacesNavegacion = document.querySelectorAll('a[href^="#"]');
 for (let i = 0; i < enlacesNavegacion.length; i++) {
   enlacesNavegacion[i].addEventListener("click", handleClick);
 }
+// //hasta ahora la mejor version
+// window.addEventListener("popstate", function (event) {
+//   if (event.state && event.state.seccionId) {
+//     var seccionActual = document.getElementById(event.state.seccionId);
+//     if (seccionActual) {
+//       if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+//         window.scrollTo({ top: 0, behavior: "smooth" });
+//       } else {
+//         cambiarSeccion(event.state.seccionId);
+//       }
+//     }
+//   } else {
+//     window.scrollTo({ top: 0, behavior: "smooth" });
+//   }
+// });
+
+// if ("scrollRestoration" in history) {
+//   history.scrollRestoration = "manual";
+// }
+
+// window.addEventListener("beforeunload", function (event) {
+//   event.preventDefault();
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// });
 
 window.addEventListener("popstate", function (event) {
   if (event.state && event.state.seccionId) {
@@ -40,7 +64,11 @@ window.addEventListener("popstate", function (event) {
       }
     }
   } else {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.close();
+    }
   }
 });
 
@@ -50,5 +78,10 @@ if ("scrollRestoration" in history) {
 
 window.addEventListener("beforeunload", function (event) {
   event.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    window.close();
+  }
 });
+
