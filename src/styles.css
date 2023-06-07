@@ -47,6 +47,31 @@ html {
   user-select: none;
 }
 
+#scrollTopButton {
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  width: 40px;
+  padding: 5px;
+  position: fixed;
+  bottom: 5px;
+  right: 50%;
+  background-color: #113479;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+#scrollTopButton.show {
+  transform: translateY(0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+}
+
 header {
   background-color: #E3E1CF;
   display: flex;
@@ -166,6 +191,34 @@ nav.active {
 
 .logo__container {
   width: 60px;
+}
+
+.btn__menu--abrir {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn__menu--abrir::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.btn__menu--abrir:focus::after,
+.btn__menu--abrir:active::after {
+  width: 300%;
+  height: 300%;
+  opacity: 1;
 }
 
 .hero__container {
