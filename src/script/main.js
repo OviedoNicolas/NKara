@@ -58,14 +58,14 @@ window.addEventListener("popstate", function (event) {
     var seccionActual = document.getElementById(event.state.seccionId);
     if (seccionActual) {
       if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo(0, 0);
       } else {
         cambiarSeccion(event.state.seccionId);
       }
     }
   } else {
     if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo(0, 0);
     } else {
       window.close();
     }
@@ -79,9 +79,10 @@ if ("scrollRestoration" in history) {
 window.addEventListener("beforeunload", function (event) {
   event.preventDefault();
   if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
   } else {
     window.close();
   }
 });
+
 
