@@ -7,6 +7,7 @@
 
 body{
     background-color: $color_oscuro;
+    position: relative;
 }
 
 img{
@@ -46,16 +47,17 @@ html{
 }
 
 #scrollTopButton {
-    // display: none;
+    display: none;
     transform: translateY(100%);
     opacity: 0;
     visibility: hidden;
-    transition: .3s;
+    transition: 0.3s;
     width: 40px;
     padding: 5px;
     position: fixed;
     bottom: 5px;
-    right: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: $color_acentuacion;
     border-radius: 5px;
     cursor: pointer;
@@ -63,11 +65,12 @@ html{
 }
 
 #scrollTopButton.show {
-    transform: translateY(0%);
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
     visibility: visible;
     opacity: 1;
 }
+
 

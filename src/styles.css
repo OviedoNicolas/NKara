@@ -9,6 +9,7 @@
 
 body {
   background-color: #25282c;
+  position: relative;
 }
 
 img {
@@ -48,6 +49,7 @@ html {
 }
 
 #scrollTopButton {
+  display: none;
   transform: translateY(100%);
   opacity: 0;
   visibility: hidden;
@@ -56,7 +58,8 @@ html {
   padding: 5px;
   position: fixed;
   bottom: 5px;
-  right: 50%;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #113479;
   border-radius: 5px;
   cursor: pointer;
@@ -64,7 +67,7 @@ html {
 }
 
 #scrollTopButton.show {
-  transform: translateY(0%);
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +107,7 @@ nav {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: rgba(0, 238, 255, 0.918);
+  background-color: #FFE632;
   gap: 50px;
 }
 nav a {
@@ -147,6 +150,10 @@ nav.active {
   padding: 5px;
   border-radius: 50%;
   margin: 20px;
+  transition: 0.3s;
+}
+.btn__menu--abrir:focus, .btn__menu--abrir:active {
+  transform: scale(90%);
 }
 @media only screen and (min-width: 996px) {
   .btn__menu--abrir {
@@ -162,6 +169,10 @@ nav.active {
   padding: 5px;
   border-radius: 50%;
   margin-top: 50px;
+  transition: 0.3s;
+}
+.btn__menu--cerrar:focus, .btn__menu--cerrar:active {
+  transform: scale(90%);
 }
 @media only screen and (min-width: 996px) {
   .btn__menu--cerrar {
@@ -191,34 +202,6 @@ nav.active {
 
 .logo__container {
   width: 60px;
-}
-
-.btn__menu--abrir {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.btn__menu--abrir::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
-  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
-}
-
-.btn__menu--abrir:focus::after,
-.btn__menu--abrir:active::after {
-  width: 300%;
-  height: 300%;
-  opacity: 1;
 }
 
 .hero__container {

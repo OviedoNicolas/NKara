@@ -29,7 +29,7 @@ nav{
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: rgba(0, 238, 255, 0.918);
+    background-color: $color_secundario;
     gap: 50px;
 
     a{
@@ -71,6 +71,12 @@ nav.active{
     padding: 5px;
     border-radius: 50%;
     margin: 20px;
+    transition: .3s;
+
+    &:focus,
+    &:active {
+    transform: scale(90%);
+    }
 
     @media only screen and (min-width: 996px) {
         display: none;
@@ -85,6 +91,12 @@ nav.active{
     padding: 5px;
     border-radius: 50%;
     margin-top: 50px;
+    transition: .3s;
+
+    &:focus,
+    &:active {
+    transform: scale(90%);
+}
 
     @media only screen and (min-width: 996px) {
         display: none;
@@ -115,32 +127,3 @@ nav.active{
 .logo__container{
     width: 60px;
 }
-
-
-.btn__menu--abrir {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .btn__menu--abrir::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    pointer-events: none;
-    transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
-  }
-  
-  .btn__menu--abrir:focus::after,
-  .btn__menu--abrir:active::after {
-    width: 300%;
-    height: 300%;
-    opacity: 1;
-  }
