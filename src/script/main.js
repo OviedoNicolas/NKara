@@ -64,7 +64,8 @@ window.addEventListener("popstate", function (event) {
       }
     }
   } else {
-    if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+    var pageBody = document.getElementById("pageBody");
+    if (pageBody && pageBody.scrollTop > 0) {
       window.scrollTo(0, 0);
     } else {
       window.close();
@@ -78,11 +79,10 @@ if ("scrollRestoration" in history) {
 
 window.addEventListener("beforeunload", function (event) {
   event.preventDefault();
-  if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+  var pageBody = document.getElementById("pageBody");
+  if (pageBody && pageBody.scrollTop > 0) {
     window.scrollTo(0, 0);
   } else {
     window.close();
   }
 });
-
-
