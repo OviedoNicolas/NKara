@@ -232,43 +232,127 @@ nav.active {
   font-size: clamp(12px, 3vw, 60px);
 }
 
-.discografía__container {
-  margin-top: -4px;
+#discografia {
+  display: flex;
+  justify-content: center;
   padding-top: 100px;
   padding-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-position: -380px;
   background-size: cover;
   background-repeat: no-repeat;
+  background: rgb(56, 165, 172);
+  background: linear-gradient(90deg, #38A5AC 0%, #38A5AC 44%, #DEA633 44%, #DEA633 100%);
+}
+
+.discografía__container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 50px;
 }
 @media only screen and (min-width: 665px) {
   .discografía__container {
     background-position: right;
-    gap: 80px;
   }
 }
-.discografía__container div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+.discografía__container h2 {
+  color: #25282c;
+  align-self: flex-end;
+  font-size: clamp(50px, 10vw, 75px);
+  text-decoration: underline 6px solid #38A5AC;
 }
-.discografía__container div p {
+@media only screen and (max-width: 830px) {
+  .discografía__container h2 {
+    align-self: flex-start;
+  }
+}
+.discografía__container .discografia__main {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 110px;
+}
+.discografía__container .discografia__main p {
   font-size: clamp(25px, 3vw, 35px);
   color: #25282c;
   font-family: "Bebas Neue", sans-serif;
 }
 .discografía__container iframe {
-  box-shadow: 5px 10px 10px #25282c;
+  aspect-ratio: 3/4;
+  width: 100%;
+  box-shadow: 5px 10px 20px #25282c;
   border-radius: 25px;
 }
 
 .list__container {
-  width: 60%;
+  width: 50%;
+}
+@media only screen and (max-width: 830px) {
+  .list__container {
+    width: 100%;
+  }
+}
+
+.list__img {
+  border: 10px solid #E3E1CF;
+  width: clamp(16rem, 40vw, 450px);
+  position: relative;
+  transform: rotate(8deg);
+  overflow: hidden;
+  background: linear-gradient(90deg, #DEA633 0%, #DEA633 44%, #38A5AC 44%, #38A5AC 100%);
+}
+@media only screen and (max-width: 830px) {
+  .list__img {
+    display: none;
+  }
+}
+.list__img img {
+  transform: rotate(-12deg) scale(1.1) translate(-17px, 36px);
+}
+
+.discografia__boton {
+  position: relative;
+  border: 0;
+  padding: 1em 2em;
+  font-weight: 700;
+  cursor: pointer;
+  outline: 0.5em solid #DEA633;
+  outline-offset: -0.3em;
+  color: #E3E1CF;
+  background-color: #38A5AC;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-top: 40px;
+}
+@media only screen and (max-width: 830px) {
+  .discografia__boton {
+    align-self: center;
+  }
+}
+.discografia__boton:hover {
+  animation: shake 900ms infinite, glitch2 700ms infinite steps(4);
+}
+@keyframes shake {
+  25% {
+    transform: translate(-0.1em, -0.1em);
+  }
+  50% {
+    transform: translate(0.3em, 0);
+  }
+  75% {
+    transform: translate(0, 0.3em);
+  }
+}
+@keyframes glitch2 {
+  from {
+    box-shadow: 0.8em 0.8em #25282c, -0.8em -0.8em #E3E1CF;
+  }
+  to {
+    text-shadow: 0.3em 0.2em #25282c, -0.3em -0.2em #E3E1CF;
+  }
 }
 
 .redes__container {
@@ -283,7 +367,7 @@ nav.active {
   background-attachment: fixed;
   background-size: cover;
   background-attachment: fixed;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -296,12 +380,13 @@ nav.active {
   padding: 10px;
   height: clamp(125px, 15vw, 250px);
   max-width: 1240px;
-  background-color: rgba(17, 52, 121, 0.831372549);
+  background-color: rgba(227, 225, 207, 0.6588235294);
   border-radius: 15px;
 }
 .redes__banner p {
   font-size: clamp(25px, 3vw, 35px);
   font-family: "Bebas Neue", sans-serif;
+  color: #25282c;
 }
 
 .redes__img--container {
@@ -346,21 +431,42 @@ nav.active {
   margin: 150px 0px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+#videos h2 {
+  color: #E3E1CF;
+  align-self: flex-start;
+  font-size: clamp(50px, 10vw, 75px);
+  text-decoration: underline 6px solid #DEA633;
 }
 
 .videos__container {
-  height: 500px;
-  width: 1200px;
-  max-width: 80%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   grid-auto-flow: row;
-  grid-template-areas: "video1 video1" "video2 video3" "video4 video5";
+  align-items: center;
+  grid-template-areas: "video1 video1 video1" "video2 video3 video4";
+}
+@media only screen and (max-width: 1024px) {
+  .videos__container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "video1 video1" "video2 video3" "video4 video4";
+  }
+}
+@media only screen and (max-width: 665px) {
+  .videos__container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "video1" "video2" "video3" "video4";
+  }
+}
+.videos__container div {
+  aspect-ratio: 16/9;
 }
 .videos__container iframe {
   width: 100%;
+  height: 100%;
 }
 .videos__container .video1 {
   grid-area: video1;
@@ -374,8 +480,51 @@ nav.active {
 .videos__container .video4 {
   grid-area: video4;
 }
-.videos__container .video5 {
-  grid-area: video5;
+
+.videos__section {
+  display: flex;
+  width: 1200px;
+  max-width: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.videos__boton {
+  position: relative;
+  border: 0;
+  padding: 1em 2em;
+  font-weight: 700;
+  cursor: pointer;
+  outline: 0.5em solid #E3E1CF;
+  outline-offset: -0.3em;
+  color: #E3E1CF;
+  background-color: #25282c;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+.videos__boton:hover {
+  animation: shake 900ms infinite, glitch 700ms infinite steps(4);
+}
+@keyframes shake {
+  25% {
+    transform: translate(-0.1em, -0.1em);
+  }
+  50% {
+    transform: translate(0.3em, 0);
+  }
+  75% {
+    transform: translate(0, 0.3em);
+  }
+}
+@keyframes glitch {
+  from {
+    box-shadow: 0.8em 0.8em #DEA633, -0.8em -0.8em #38A5AC;
+  }
+  to {
+    text-shadow: 0.3em 0.2em #DEA633, -0.3em -0.2em #38A5AC;
+  }
 }
 
 .biografia__container {

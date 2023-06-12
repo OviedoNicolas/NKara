@@ -1,26 +1,45 @@
-.discografía__container{
-    margin-top: -4px;
+#discografia{
+    display: flex;
+    justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    background-position: -380px;
     background-size: cover;
     background-repeat: no-repeat;
+    background: rgb(56,165,172);
+    background: linear-gradient(90deg, $color_principal 0%, $color_principal 44%, $color_secundario 44%, $color_secundario 100%);
+}
+
+.discografía__container{
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 50px;
 
     @media only screen and (min-width: 665px) {
         background-position: right;
-        gap: 80px;
     }
 
-    div{
+    h2{
+        color: $color_oscuro;
+        align-self: flex-end;
+        font-size: clamp(50px, 10vw, 75px);
+        text-decoration: underline 6px solid $color_principal;
+
+        @media only screen and (max-width: 830px) {
+            align-self: flex-start;;
+        }
+    }
+
+    .discografia__main{
+        width: 100%;
+        max-width: 1200px;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: 20px;
+        justify-content: center;
+        gap: 110px;
+
 
         p{
             font-size: clamp(25px, 3vw, 35px);
@@ -30,11 +49,90 @@
     };
 
     iframe{
-        box-shadow: 5px 10px 10px $color_oscuro;
+        aspect-ratio: 3/4;
+        width: 100%;
+        box-shadow: 5px 10px 20px $color_oscuro;
         border-radius: 25px;
     }
 }
 
 .list__container{
-    width: 60%;
+    width: 50%;
+
+    @media only screen and (max-width: 830px) {
+        width: 100%;
+    }
+}
+
+.list__img{
+    border: 10px solid $color_claro;
+    width: clamp(16rem, 40vw, 450px);
+    position: relative;
+    transform: rotate(8deg);
+    overflow: hidden;
+    background: linear-gradient(90deg, $color_secundario 0%, $color_secundario 44%,$color_principal 44%,$color_principal 100%);
+
+    @media only screen and (max-width: 830px) {
+        display: none;
+    }
+
+
+    img{
+        transform: rotate(-12deg) scale(1.1) translate(-17px, 36px);
+    }
+}
+
+.discografia__boton{
+    position: relative;
+    border: 0;
+    padding: 1em 2em;
+    font-weight: 700;
+    cursor: pointer;
+    outline: .5em solid $color_secundario;
+    outline-offset: -.3em;
+    color: $color_claro;
+    background-color: $color_principal;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-top: 40px;
+
+    @media only screen and (max-width: 830px) {
+        align-self: center;
+    }
+    
+    &:hover {
+    animation: shake 900ms infinite,glitch2 700ms infinite steps(4);
+    }
+    
+    @keyframes shake {
+        0% {
+        }
+    
+        25% {
+            transform: translate(-.1em,-.1em);
+        }
+    
+        50% {
+            transform: translate(.3em,0);
+        }
+    
+        75% {
+            transform: translate(0,.3em);
+        }
+    
+        100% {
+        }
+    }
+    
+    @keyframes glitch2 {
+        from {
+            box-shadow: .8em .8em  $color_oscuro,
+            -.8em -.8em $color_claro;
+        }
+    
+        to {
+            text-shadow: .3em .2em $color_oscuro,
+            -.3em -.2em $color_claro;
+        }
+    }
 }

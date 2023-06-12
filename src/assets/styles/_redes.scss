@@ -10,7 +10,7 @@
     background-attachment: fixed;
     background-size: cover;
     background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -23,12 +23,13 @@
     padding: 10px;
     height: clamp(125px, 15vw, 250px);
     max-width: 1240px;
-    background-color: #113479d4;
+    background-color: #e3e1cfa8;
     border-radius: 15px;
 
     p{
         font-size: clamp(25px, 3vw, 35px);
         font-family: $fuente_principal;
+        color: $color_oscuro;
     }
 }
 
