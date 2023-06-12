@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-position: -1500px;
+    background-position: -380px;
     background-size: cover;
     background-repeat: no-repeat;
     gap: 50px;
@@ -33,4 +33,8 @@
         box-shadow: 5px 10px 10px $color_oscuro;
         border-radius: 25px;
     }
+}
+
+.list__container{
+    width: 60%;
 }
