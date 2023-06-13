@@ -229,7 +229,7 @@ nav.active {
   position: absolute;
   top: 32%;
   left: 11%;
-  font-size: clamp(12px, 3vw, 60px);
+  font-size: clamp(16px, 3vw, 60px);
 }
 
 #discografia {
@@ -245,16 +245,12 @@ nav.active {
 
 .discografía__container {
   max-width: 1200px;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 50px;
-}
-@media only screen and (min-width: 665px) {
-  .discografía__container {
-    background-position: right;
-  }
 }
 .discografía__container h2 {
   color: #25282c;
@@ -288,7 +284,7 @@ nav.active {
 }
 
 .list__container {
-  width: 50%;
+  width: 40%;
 }
 @media only screen and (max-width: 830px) {
   .list__container {
@@ -325,7 +321,7 @@ nav.active {
   background-color: #38A5AC;
   text-transform: uppercase;
   align-self: flex-start;
-  margin-top: 40px;
+  margin-left: 40px;
 }
 @media only screen and (max-width: 830px) {
   .discografia__boton {
@@ -527,10 +523,77 @@ nav.active {
   }
 }
 
-.biografia__container {
+.biografia__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
-  background-color: #E3E1CF;
+  background-color: #25282c;
+  background: rgb(227, 225, 207);
+  background: linear-gradient(140deg, rgb(227, 225, 207) 0%, rgb(159, 158, 148) 5%, rgb(113, 114, 109) 10%, rgb(78, 79, 79) 16%, rgb(58, 60, 62) 21%, rgb(37, 40, 44) 28%);
 }
-.biografia__container p {
-  color: #25282c;
+
+.biografia__container {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.biografia__container h2 {
+  color: #E3E1CF;
+  align-self: flex-start;
+  font-size: clamp(50px, 10vw, 75px);
+  text-decoration: underline 6px solid #38A5AC;
+}
+
+.biografia__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 830px) {
+  .biografia__main {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.biografia__main .biografia__texto {
+  width: 30%;
+  margin-top: 30px;
+}
+@media only screen and (max-width: 830px) {
+  .biografia__main .biografia__texto {
+    width: 100%;
+  }
+}
+.biografia__main .biografia__texto p {
+  font-size: clamp(15px, 2vw, 24px);
+}
+.biografia__main .biografia__img {
+  width: clamp(350px, 50vw, 650px);
+  filter: grayscale(1);
+  display: block;
+  position: relative;
+}
+.biografia__main .biografia__img::before {
+  content: "";
+  background-image: linear-gradient(to left, #25282c, rgba(37, 40, 44, 0));
+  position: absolute;
+  height: 100%;
+  right: 0;
+  width: 90%;
+}
+.biografia__main .biografia__img::after {
+  content: "";
+  background-image: linear-gradient(to bottom, rgba(241, 17, 17, 0), #25282c);
+  position: absolute;
+  height: 69px;
+  bottom: 0;
+  right: 0;
+  width: 77%;
+}
+
+#notas {
+  height: 100vh;
 }/*# sourceMappingURL=styles.css.map */

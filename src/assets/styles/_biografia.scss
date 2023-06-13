@@ -1,8 +1,83 @@
-.biografia__container{
+.biografia__section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 30px;
-    background-color: $color_claro;
+    background-color: $color_oscuro;
+    // background: rgb(37,40,44);
+    // background: linear-gradient(90deg, rgba(37,40,44,1) 0%, rgba(37,40,44,1) 67%, rgba(227,225,207,1) 100%);
+background: rgb(227,225,207);
+background: linear-gradient(140deg, rgba(227,225,207,1) 0%, rgba(159,158,148,1) 5%, rgba(113,114,109,1) 10%, rgba(78,79,79,1) 16%, rgba(58,60,62,1) 21%, rgba(37,40,44,1) 28%);
+    
+}
 
-    p{
-        color: $color_oscuro;
+.biografia__container{
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        color: $color_claro;
+        align-self: flex-start;
+        font-size: clamp(50px, 10vw, 75px);
+        text-decoration: underline 6px solid $color_principal;
     }
+}
+
+.biografia__main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 830px) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .biografia__texto{
+        width: 30%;
+        margin-top: 30px;
+
+        @media only screen and (max-width: 830px) {
+            width: 100%;
+        }
+
+        p{
+            font-size: clamp(15px, 2vw, 24px)
+        }
+    }
+
+    .biografia__img{
+        width: clamp(350px, 50vw, 650px);
+        filter: grayscale(1);
+
+
+        display:block;
+        position:relative;
+
+        &::before {
+            content: "";
+            background-image: linear-gradient(to left, #25282c, #25282c00);
+            position: absolute;
+            height: 100%;
+            right: 0;
+            width: 90%;
+        }
+        &::after{
+            content: "";
+            background-image: linear-gradient(to bottom, rgba(241, 17, 17, 0), #25282c);
+            position: absolute;
+            height: 69px;
+            bottom: 0;
+            right: 0;
+            width: 77%;
+        }
+    }
+}
+
+#notas{
+    height: 100vh;
 }
