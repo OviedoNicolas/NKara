@@ -4,11 +4,13 @@
     align-items: center;
     padding: 30px;
     background-color: $color_oscuro;
-    // background: rgb(37,40,44);
-    // background: linear-gradient(90deg, rgba(37,40,44,1) 0%, rgba(37,40,44,1) 67%, rgba(227,225,207,1) 100%);
-background: rgb(227,225,207);
-background: linear-gradient(140deg, rgba(227,225,207,1) 0%, rgba(159,158,148,1) 5%, rgba(113,114,109,1) 10%, rgba(78,79,79,1) 16%, rgba(58,60,62,1) 21%, rgba(37,40,44,1) 28%);
-    
+    background: rgb(227,225,207);
+    background: linear-gradient(140deg, rgba(227,225,207,1) 0%, rgba(159,158,148,1) 5%, rgba(113,114,109,1) 10%, rgba(78,79,79,1) 16%, rgba(58,60,62,1) 21%, rgba(37,40,44,1) 28%);
+        
+
+    @media only screen and (max-width: 830px) {
+        padding: 0;
+    }
 }
 
 .biografia__container{
@@ -43,7 +45,9 @@ background: linear-gradient(140deg, rgba(227,225,207,1) 0%, rgba(159,158,148,1) 
         margin-top: 30px;
 
         @media only screen and (max-width: 996px) {
-            width: 100%;
+            width: 90%;
+            margin: auto;
+            margin-bottom: 40px;
         }
 
         p{

@@ -230,7 +230,12 @@ nav.active {
   position: absolute;
   top: 32%;
   left: 10%;
-  font-size: clamp(16px, 3vw, 60px);
+  font-size: clamp(24px, 3vw, 60px);
+}
+@media only screen and (max-width: 830px) {
+  .hero__container p {
+    top: 64%;
+  }
 }
 
 #discografia {
@@ -256,6 +261,11 @@ nav.active {
 .discografía__container a {
   align-self: flex-start;
   margin-left: 40px;
+}
+@media only screen and (max-width: 830px) {
+  .discografía__container a {
+    align-self: center;
+  }
 }
 .discografía__container h2 {
   color: #25282c;
@@ -495,6 +505,11 @@ nav.active {
 .videos__section a {
   align-self: flex-end;
 }
+@media only screen and (max-width: 830px) {
+  .videos__section a {
+    align-self: center;
+  }
+}
 
 .videos__boton {
   position: relative;
@@ -540,6 +555,11 @@ nav.active {
   background: rgb(227, 225, 207);
   background: linear-gradient(140deg, rgb(227, 225, 207) 0%, rgb(159, 158, 148) 5%, rgb(113, 114, 109) 10%, rgb(78, 79, 79) 16%, rgb(58, 60, 62) 21%, rgb(37, 40, 44) 28%);
 }
+@media only screen and (max-width: 830px) {
+  .biografia__section {
+    padding: 0;
+  }
+}
 
 .biografia__container {
   width: 80%;
@@ -573,7 +593,9 @@ nav.active {
 }
 @media only screen and (max-width: 996px) {
   .biografia__main .biografia__texto {
-    width: 100%;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
   }
 }
 .biografia__main .biografia__texto p {
@@ -625,6 +647,11 @@ nav.active {
   align-self: flex-end;
   font-size: clamp(50px, 10vw, 75px);
   text-decoration: underline 6px solid #DEA633;
+}
+@media only screen and (max-width: 830px) {
+  .notas__container h2 {
+    align-self: flex-start;
+  }
 }
 
 .notas__main {
@@ -741,7 +768,7 @@ nav.active {
 }
 @media only screen and (max-width: 730px) {
   .card--titulo h3 {
-    font-size: 36px;
+    font-size: clamp(16px, 4vw, 36px);
   }
 }
 

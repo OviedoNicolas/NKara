@@ -19,6 +19,10 @@
         align-self: flex-end;
         font-size: clamp(50px, 10vw, 75px);
         text-decoration: underline 6px solid $color_secundario;
+
+        @media only screen and (max-width: 830px) {
+            align-self: flex-start;
+        }
     }
 }
 
@@ -141,7 +145,7 @@
             text-align: center;
 
             @media only screen and (max-width: 730px){
-                font-size: 36px;
+                font-size: clamp(16px, 4vw, 36px);
             }
         }
 }

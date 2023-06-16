@@ -22,6 +22,10 @@
         position: absolute;
         top: 32%;
         left: 10%;
-        font-size: clamp(16px, 3vw, 60px)
+        font-size: clamp(24px, 3vw, 60px);
+
+        @media only screen and (max-width: 830px) {
+            top: 64%;
+        }
     }
 }
