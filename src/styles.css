@@ -539,6 +539,7 @@ nav.active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 60px;
 }
 .biografia__container h2 {
   color: #E3E1CF;
@@ -549,30 +550,31 @@ nav.active {
 
 .biografia__main {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 996px) {
   .biografia__main {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 20px;
   }
 }
 .biografia__main .biografia__texto {
-  width: 30%;
+  width: 60%;
   margin-top: 30px;
 }
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 996px) {
   .biografia__main .biografia__texto {
     width: 100%;
   }
 }
 .biografia__main .biografia__texto p {
-  font-size: clamp(15px, 2vw, 24px);
+  font-size: clamp(15px, 1.4vw, 22px);
 }
 .biografia__main .biografia__img {
   width: clamp(350px, 50vw, 650px);
   filter: grayscale(1);
+  align-self: center;
   display: block;
   position: relative;
 }
