@@ -18,6 +18,11 @@
     justify-content: center;
     gap: 50px;
 
+    a{
+        align-self: flex-start;
+        margin-left: 40px;
+    }
+
     h2{
         color: $color_oscuro;
         align-self: flex-end;
@@ -48,13 +53,14 @@
     iframe{
         aspect-ratio: 3/4;
         width: 100%;
-        box-shadow: 5px 10px 20px $color_oscuro;
+        box-shadow: 0px 3px 20px $color_acentuacion;
         border-radius: 25px;
     }
 }
 
 .list__container{
     width: 40%;
+    margin-left: auto ;
 
     @media only screen and (max-width: 830px) {
         width: 100%;
@@ -68,6 +74,8 @@
     transform: rotate(8deg);
     overflow: hidden;
     background: linear-gradient(90deg, $color_secundario 0%, $color_secundario 44%,$color_principal 44%,$color_principal 100%);
+    margin-left: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
     @media only screen and (max-width: 830px) {
         display: none;
@@ -90,8 +98,6 @@
     color: $color_claro;
     background-color: $color_principal;
     text-transform: uppercase;
-    align-self: flex-start;
-    margin-left: 40px;
 
     @media only screen and (max-width: 830px) {
         align-self: center;

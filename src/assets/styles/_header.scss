@@ -35,7 +35,7 @@ nav{
     a{
         font-size: 50px;
         font-family: $fuente_principal;
-        color: $color_oscuro;
+        color: $color_claro;
 
         &:hover{
             color: $color_principal;
@@ -43,6 +43,7 @@ nav{
 
         @media only screen and (min-width: 996px) {
             font-size: 30px;
+            color: $color_oscuro;
         }
     }
 

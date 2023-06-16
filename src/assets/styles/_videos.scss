@@ -72,6 +72,11 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+
+    
+        a{
+            align-self: flex-end;
+        }
 }
 
 .videos__boton{
@@ -85,7 +90,6 @@
     color: $color_claro;
     background-color: $color_oscuro;
     text-transform: uppercase;
-    align-self: flex-end;
     
     &:hover {
     animation: shake 900ms infinite,glitch 700ms infinite steps(4);
