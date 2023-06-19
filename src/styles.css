@@ -847,11 +847,13 @@ nav.active {
   .letras__main .letras__lista {
     width: 100%;
     columns: 3;
+    margin-left: 40px;
   }
 }
 @media only screen and (max-width: 620px) {
   .letras__main .letras__lista {
     columns: 2;
+    margin-left: 30px;
   }
 }
 .letras__main .letras__lista li {
