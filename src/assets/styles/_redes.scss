@@ -26,6 +26,11 @@
     background-color: #e3e1cfa8;
     border-radius: 15px;
 
+    @media only screen and (max-width: 830px) {
+        width: 80%;
+    }
+
+
     p{
         font-size: clamp(25px, 3vw, 35px);
         font-family: $fuente_principal;

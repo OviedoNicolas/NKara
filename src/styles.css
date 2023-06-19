@@ -245,7 +245,7 @@ nav.active {
   padding-bottom: 100px;
   background-size: cover;
   background-repeat: no-repeat;
-  background: rgb(56, 165, 172);
+  background: #38A5AC;
   background: linear-gradient(90deg, #38A5AC 0%, #38A5AC 44%, #DEA633 44%, #DEA633 100%);
 }
 
@@ -260,7 +260,6 @@ nav.active {
 }
 .discografía__container a {
   align-self: flex-start;
-  margin-left: 40px;
 }
 @media only screen and (max-width: 830px) {
   .discografía__container a {
@@ -394,6 +393,11 @@ nav.active {
   max-width: 1240px;
   background-color: rgba(227, 225, 207, 0.6588235294);
   border-radius: 15px;
+}
+@media only screen and (max-width: 830px) {
+  .redes__banner {
+    width: 80%;
+  }
 }
 .redes__banner p {
   font-size: clamp(25px, 3vw, 35px);
@@ -550,7 +554,7 @@ nav.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 30px 0px;
   background-color: #25282c;
   background: rgb(227, 225, 207);
   background: linear-gradient(140deg, rgb(227, 225, 207) 0%, rgb(159, 158, 148) 5%, rgb(113, 114, 109) 10%, rgb(78, 79, 79) 16%, rgb(58, 60, 62) 21%, rgb(37, 40, 44) 28%);
@@ -799,4 +803,150 @@ nav.active {
 }
 .card__boton:hover {
   animation: shake 900ms infinite, glitch 700ms infinite steps(4);
+}
+
+#letras {
+  background-color: #38A5AC;
+  background: linear-gradient(90deg, #DEA633 0%, #DEA633 70%, #38A5AC 70%, #38A5AC 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letras__container {
+  padding: 60px 0px;
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.letras__container h2 {
+  color: #E3E1CF;
+  align-self: flex-start;
+  font-size: clamp(50px, 10vw, 75px);
+  text-decoration: underline 6px solid #38A5AC;
+}
+
+.letras__main {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+@media only screen and (max-width: 830px) {
+  .letras__main {
+    flex-direction: column;
+  }
+}
+.letras__main .letras__lista {
+  width: 30%;
+}
+@media only screen and (max-width: 830px) {
+  .letras__main .letras__lista {
+    width: 100%;
+    columns: 3;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .letras__main .letras__lista {
+    columns: 2;
+  }
+}
+.letras__main .letras__lista li {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(16px, 16px + 1vw, 24px);
+  padding-top: 10px;
+  cursor: pointer;
+  list-style-type: disclosure-closed;
+}
+.letras__main .letras__lista li:hover {
+  color: #E3E1CF;
+}
+.letras__main .letras__lista .active {
+  color: #E3E1CF;
+}
+.letras__main .letras__letra {
+  width: 70%;
+  padding: 30px;
+  background-color: #E3E1CF;
+  border-radius: 20px;
+  display: flex;
+  transition: all 0.7s;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 830px) {
+  .letras__main .letras__letra {
+    width: 100%;
+  }
+}
+.letras__main .letras__letra.darkMode {
+  background-color: #25282c;
+}
+.letras__main .letras__letra.darkMode p, .letras__main .letras__letra.darkMode h3 {
+  color: #E3E1CF;
+}
+.letras__main .letras__letra div p {
+  margin-top: 20px;
+}
+.letras__main .letras__letra div h3 {
+  font-size: 30px;
+}
+.letras__main .letras__letra div p {
+  color: #25282c;
+  font-weight: 600;
+}
+@media only screen and (max-width: 620px) {
+  .letras__main .letras__letra div p {
+    font-size: 14px;
+    font-weight: 100;
+  }
+}
+
+#checkbox {
+  display: none;
+  align-self: flex-start;
+}
+
+.Switch {
+  position: relative;
+  width: 25px;
+  height: 50px;
+  background-color: #DEA633;
+  border-radius: 30px;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.274) inset, -2px 0px 5px rgba(255, 255, 255, 0.411) inset;
+}
+
+.Switch::before {
+  content: "";
+  background-color: #25282c;
+  position: absolute;
+  height: 80%;
+  width: 5px;
+  border-radius: 5px;
+}
+
+.Switch::after {
+  background-color: #38A5AC;
+  border: 2px solid #E3E1CF;
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 12.5px;
+  top: 7.5px;
+  transition-duration: 0.3s;
+  box-shadow: 5px 2px 5px rgba(8, 8, 8, 0.288);
+  border-radius: 5px;
+}
+
+#checkbox:checked + .Switch::after {
+  transform: translateY(25px);
+  transition-duration: 0.3s;
+  border: 2px solid #25282c;
 }/*# sourceMappingURL=styles.css.map */

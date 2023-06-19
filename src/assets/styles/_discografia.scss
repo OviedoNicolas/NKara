@@ -5,7 +5,7 @@
     padding-bottom: 100px;
     background-size: cover;
     background-repeat: no-repeat;
-    background: rgb(56,165,172);
+    background: $color_principal;
     background: linear-gradient(90deg, $color_principal 0%, $color_principal 44%, $color_secundario 44%, $color_secundario 100%);
 }
 
@@ -20,7 +20,6 @@
 
     a{
         align-self: flex-start;
-        margin-left: 40px;
 
         @media only screen and (max-width: 830px) {
             align-self: center;
