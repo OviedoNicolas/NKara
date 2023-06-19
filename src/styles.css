@@ -58,12 +58,22 @@ html {
   padding: 5px;
   position: fixed;
   bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #113479;
-  border-radius: 5px;
+  right: 15px;
+  background-color: #E3E1CF;
+  border-radius: 8px;
   cursor: pointer;
   border: none;
+  animation: bounce_513 1s infinite;
+}
+@keyframes bounce_513 {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
 
 #scrollTopButton.show {
@@ -876,7 +886,8 @@ nav.active {
   border-radius: 20px;
   display: flex;
   transition: all 0.7s;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 10px;
 }
 @media only screen and (max-width: 830px) {
   .letras__main .letras__letra {
@@ -951,4 +962,15 @@ nav.active {
   transform: translateY(25px);
   transition-duration: 0.3s;
   border: 2px solid #25282c;
+}
+
+footer {
+  display: flex;
+  padding: 60px 0px;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+footer div {
+  width: 40px;
 }/*# sourceMappingURL=styles.css.map */

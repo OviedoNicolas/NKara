@@ -441,7 +441,7 @@ const canciones = [
   {
       titulo: "Canción para el infante de 26 años",
       letra:`Si te cuesta levantarte temprano, <br>
-      No te preocupes porque amí también.<br>
+      No te preocupes porque a mí también.<br>
       Todos los dias algo cambia, algo pasa <br>
       Y no sabemos que hacer.<br>
       <br>
