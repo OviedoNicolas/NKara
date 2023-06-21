@@ -341,6 +341,7 @@ nav.active {
   border: 0;
   padding: 1em 2em;
   font-weight: 700;
+  font-size: 13.33px;
   cursor: pointer;
   outline: 0.5em solid #DEA633;
   outline-offset: -0.3em;
@@ -409,7 +410,7 @@ nav.active {
     width: 80%;
   }
 }
-.redes__banner p {
+.redes__banner h2 {
   font-size: clamp(25px, 3vw, 35px);
   font-family: "Bebas Neue", sans-serif;
   color: #25282c;
@@ -530,6 +531,7 @@ nav.active {
   border: 0;
   padding: 1em 2em;
   font-weight: 700;
+  font-size: 13.33px;
   cursor: pointer;
   outline: 0.5em solid #E3E1CF;
   outline-offset: -0.3em;
@@ -558,6 +560,10 @@ nav.active {
   to {
     text-shadow: 0.3em 0.2em #DEA633, -0.3em -0.2em #38A5AC;
   }
+}
+
+iframe {
+  border: none;
 }
 
 .biografia__section {
@@ -805,6 +811,7 @@ nav.active {
   padding: 1em 2em;
   font-weight: 700;
   cursor: pointer;
+  font-size: 13.33px;
   outline: 0.5em solid #E3E1CF;
   outline-offset: -0.3em;
   color: #E3E1CF;
