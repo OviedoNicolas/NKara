@@ -613,7 +613,7 @@ window.addEventListener("beforeunload", function (event) {
 var scrollTopButton = document.getElementById("scrollTopButton");
 
 window.addEventListener("scroll", function () {
-  if (document.documentElement.scrollTop > 106 || document.body.scrollTop > 106) {
+  if (document.documentElement.scrollTop > 1000 || document.body.scrollTop > 106) {
     scrollTopButton.classList.add("show");
   } else {
     scrollTopButton.classList.remove("show");
